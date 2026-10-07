@@ -178,4 +178,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ──────────────────────────────────────
+  // 7. Mobile Header Nav Toggle
+  // ──────────────────────────────────────
+  const headerToggle = document.getElementById('header-toggle');
+  const siteNav = document.getElementById('site-nav');
+
+  if (headerToggle && siteNav) {
+    headerToggle.addEventListener('click', () => {
+      const expanded = headerToggle.getAttribute('aria-expanded') === 'true';
+      headerToggle.setAttribute('aria-expanded', !expanded);
+      siteNav.classList.toggle('is-active');
+    });
+
+    siteNav.querySelectorAll('.site-header__nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('is-active');
+        headerToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
 });
