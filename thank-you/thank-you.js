@@ -3,7 +3,7 @@
    Thank You Page – Interactivity
    ======================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initThankYouPage() {
 
   // ──────────────────────────────────────
   // 1. Scroll Animations (IntersectionObserver)
@@ -11,22 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
   if (animatedElements.length > 0) {
-    const animObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            animObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-      }
-    );
+    if ('IntersectionObserver' in window) {
+      const animObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              animObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.05,
+          rootMargin: '0px 0px -20px 0px'
+        }
+      );
 
-    animatedElements.forEach(el => animObserver.observe(el));
+      animatedElements.forEach(el => animObserver.observe(el));
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      animatedElements.forEach(el => el.classList.add('in-view'));
+    }
   }
 
   // ──────────────────────────────────────
@@ -36,11 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const paymentId = urlParams.get('razorpay_payment_id');
 
-  // If a payment ID is present, we could display it or log it.
-  // For now, the confirmation text is static. Extend this
-  // when backend verification is in place.
   if (paymentId) {
     console.log('Payment confirmed:', paymentId);
   }
 
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initThankYouPage);
+} else {
+  initThankYouPage();
+}
+

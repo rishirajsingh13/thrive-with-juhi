@@ -8,6 +8,12 @@
   background-color: var(--color-bg);
 }
 
+/* Safety Fallback: Ensure thank-you page content is immediately visible regardless of JS */
+.thank-you-page .animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ========================================
    SECTION: Confirmation Header
    ======================================== */
