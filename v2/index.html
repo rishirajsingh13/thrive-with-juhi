@@ -16,15 +16,19 @@
   <meta name="description"
     content="A 2-Day LIVE Webinar to understand what's really been keeping you stuck, experience a live guided emotional release, and discover the inner shift that allows you to stop merely surviving your life - and start consciously creating it.">
 
-  <!-- Fonts -->
+  <!-- Resource Hints for High Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/images/juhi-hero.webp" as="image" type="image/webp">
+
+  <!-- Streamlined Google Fonts (Only needed weights for fast LCP) -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@0,400;0,500;0,600;0,700&display=swap"
     rel="stylesheet">
 
-  <!-- Mobile & Conversion Optimized Stylesheet -->
-  <link rel="stylesheet" href="../style-v2.css">
+  <!-- Parallel Loaded Stylesheets (Zero blocking @import waterfall) -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style-v2.css">
 </head>
 
 <body>
@@ -80,8 +84,13 @@
           </div>
 
           <div class="hero-v2__cta-group animate-on-scroll">
-            <a href="https://rzp.io/rzp/qnhXgZJ" class="btn btn--primary btn--large btn--pulse" id="hero-cta">
-              Join the 2-Day LIVE Experience - <span class="btn-strike">₹999</span> ₹499 <span class="arrow">→</span>
+            <a href="https://rzp.io/rzp/qnhXgZJ" class="btn btn--primary btn--large btn--pulse hero-v2__cta-btn" id="hero-cta">
+              <span class="btn__text">Join the 2-Day LIVE Experience</span>
+              <span class="btn__price-pill">
+                <span class="btn-strike">₹999</span>
+                <span class="btn__current-price">₹499</span>
+                <span class="arrow">→</span>
+              </span>
             </a>
             <p class="hero-v2__micro-urgency">
               <span>⚡ Limited interactive seats</span> · <span>Registration closes 21 Oct</span>
@@ -92,8 +101,11 @@
         <!-- Juhi's Portrait Wrapper (Uncropped, Natural Aspect Ratio) -->
         <div class="hero-v2__portrait-wrapper animate-on-scroll">
           <div class="hero-v2__portrait-box">
-            <img src="../assets/images/juhi-hero.jpg" alt="Juhi Parmar, seated in warm natural light" class="hero__portrait"
-              loading="eager" width="600" height="700">
+            <picture>
+              <source srcset="/assets/images/juhi-hero.webp" type="image/webp">
+              <img src="/assets/images/juhi-hero.jpg" alt="Juhi Parmar, seated in warm natural light" class="hero__portrait"
+                fetchpriority="high" loading="eager" decoding="async" width="600" height="700">
+            </picture>
 
             <div class="hero-v2__floating-card">
               <p class="hero-v2__floating-name">Juhi Parmar</p>
@@ -113,7 +125,10 @@
   <section id="credibility" class="credibility-v2">
     <div class="container container--narrow">
       <div class="credibility-v2__avatar-wrap animate-on-scroll">
-        <img src="../assets/images/with_juhi_parmar.jpg" alt="Juhi Parmar" class="credibility-v2__avatar" loading="lazy">
+        <picture>
+          <source srcset="/assets/images/with_juhi_parmar.webp" type="image/webp">
+          <img src="/assets/images/with_juhi_parmar.jpg" alt="Juhi Parmar" class="credibility-v2__avatar" loading="lazy" decoding="async" width="100" height="100">
+        </picture>
       </div>
       <blockquote class="credibility-v2__quote animate-on-scroll">
         "Everyone saw me carrying on. Only I knew what and how I was feeling within."
@@ -321,7 +336,12 @@
 
       <div class="text-center animate-on-scroll">
         <a href="https://rzp.io/rzp/qnhXgZJ" class="btn btn--primary btn--pulse" id="mindset-cta">
-          Join Me - <span class="btn-strike">₹999</span> ₹499 <span class="arrow">→</span>
+          <span class="btn__text">Join Me</span>
+          <span class="btn__price-pill">
+            <span class="btn-strike">₹999</span>
+            <span class="btn__current-price">₹499</span>
+            <span class="arrow">→</span>
+          </span>
         </a>
       </div>
     </div>
@@ -470,7 +490,7 @@
        ============================================ -->
   <section id="curriculum" class="curriculum">
     <div class="container">
-      <h2 class="animate-on-scroll text-center">What You Will Learn In 2 Days</h2>
+      <h2 class="animate-on-scroll text-center">What You Will Learn<br>In&nbsp;2&nbsp;Days</h2>
       <p class="curriculum__subtitle animate-on-scroll text-center">Two days, taught in full.</p>
 
       <div class="curriculum__days">
@@ -626,7 +646,12 @@
 
       <div class="text-center animate-on-scroll" style="margin-top: 20px;">
         <a href="https://rzp.io/rzp/qnhXgZJ" class="btn btn--primary btn--pulse" id="curriculum-cta">
-          Join Me - <span class="btn-strike">₹999</span> ₹499 <span class="arrow">→</span>
+          <span class="btn__text">Join Me</span>
+          <span class="btn__price-pill">
+            <span class="btn-strike">₹999</span>
+            <span class="btn__current-price">₹499</span>
+            <span class="arrow">→</span>
+          </span>
         </a>
       </div>
     </div>
@@ -815,7 +840,12 @@
         <p class="offer__price-note">Registration closes 21 Oct · No prior experience needed</p>
 
         <a href="https://rzp.io/rzp/qnhXgZJ" class="btn btn--primary btn--large btn--full btn--pulse" id="offer-cta">
-          Join Me Now - <span class="btn-strike">₹999</span> ₹499 →
+          <span class="btn__text">Join Me Now</span>
+          <span class="btn__price-pill">
+            <span class="btn-strike">₹999</span>
+            <span class="btn__current-price">₹499</span>
+            <span class="arrow">→</span>
+          </span>
         </a>
 
         <!-- Trust Badges with SVG Icons -->
@@ -848,7 +878,10 @@
       <div class="juhi-bio__grid">
         
         <div class="juhi-bio-v2__portrait-col animate-on-scroll">
-          <img src="../assets/images/juhi-editorial.jpg" alt="Juhi Parmar portrait" class="juhi-bio__portrait" loading="lazy" width="600" height="700">
+          <picture>
+            <source srcset="/assets/images/juhi-editorial.webp" type="image/webp">
+            <img src="/assets/images/juhi-editorial.jpg" alt="Juhi Parmar portrait" class="juhi-bio__portrait" loading="lazy" decoding="async" width="600" height="700">
+          </picture>
         </div>
 
         <div class="juhi-bio__content">
@@ -1110,7 +1143,7 @@
   </footer>
 
   <!-- Version 2 Interactivity Script -->
-  <script src="../script-v2.js"></script>
+  <script src="/script-v2.js" defer></script>
 </body>
 
 </html>

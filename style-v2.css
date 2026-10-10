@@ -4,7 +4,7 @@
    Optimized specifically for 95% mobile traffic & CRO best practices.
    ========================================================================== */
 
-@import url('style.css');
+/* (style.css is linked in parallel via HTML <head> for fast HTTP/2 parallel loading) */
 
 /* ==========================================================================
    ELEGANT EDITORIAL SPACING & BREATHING ROOM
@@ -53,6 +53,7 @@ section,
 }
 
 /* Headings: Editorial, bold, well-proportioned with relaxed breathing room */
+h1,
 h2,
 .pillars h2,
 .curriculum h2,
@@ -66,6 +67,7 @@ h2,
   line-height: 1.18 !important;
   margin-top: 0 !important;
   margin-bottom: clamp(18px, 2.5vw, 24px) !important;
+  text-wrap: balance !important;
 }
 
 /* Subtitles: Generous breathing room before cards/content */
@@ -79,6 +81,7 @@ h2,
   line-height: 1.65 !important;
   margin-top: 0 !important;
   margin-bottom: clamp(34px, 4.5vw, 48px) !important;
+  text-wrap: balance !important;
 }
 
 @media (max-width: 768px) {
@@ -143,13 +146,83 @@ h2,
   transition-duration: 300ms;
 }
 
-/* High-Contrast Primary CTA Button Enhancements */
-.btn--primary {
+/* High-Contrast Primary CTA Button Enhancements & Non-Distributed Layout */
+.btn,
+.btn--primary,
+.btn--large {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 8px 12px !important;
+  flex-wrap: wrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  line-height: 1.35 !important;
   background: linear-gradient(135deg, #C59664 0%, #B07F4E 100%);
   color: #FFFFFF;
   box-shadow: 0 4px 18px rgba(176, 127, 78, 0.35);
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+}
+
+.btn__text {
+  display: inline !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+}
+
+.btn__price-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  white-space: nowrap !important; /* CRITICAL: Never break price numbers */
+  flex-shrink: 0 !important;
+}
+
+.btn-strike {
+  white-space: nowrap !important;
+  text-decoration: line-through !important;
+  opacity: 0.75 !important;
+  font-size: 0.9em !important;
+  display: inline-block !important;
+}
+
+.btn__current-price {
+  white-space: nowrap !important;
+  font-weight: 700 !important;
+  font-size: 1.05em !important;
+  display: inline-block !important;
+}
+
+/* Mobile CTA Button Layout: Centered Stack, Never Distributed */
+@media (max-width: 480px) {
+  .hero-v2__cta-btn,
+  .btn--large {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    padding: 13px 18px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-v2__cta-btn .btn__text,
+  .btn--large .btn__text {
+    font-size: 0.9375rem !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-v2__cta-btn .btn__price-pill,
+  .btn--large .btn__price-pill {
+    font-size: 1.0625rem !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
 }
 
 .btn--pulse {
