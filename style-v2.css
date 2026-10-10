@@ -592,7 +592,34 @@ h2,
 
 .pain-points__reveal {
   margin-top: 32px;
-  padding: clamp(28px, 4.5vw, 42px);
+  padding: clamp(28px, 4vw, 42px) clamp(18px, 3.5vw, 36px) !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.pain-points__reveal-answer em {
+  font-size: clamp(1.35rem, 5.5vw, 2.2rem) !important;
+  white-space: nowrap !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.02em !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 480px) {
+  .pain-points__reveal {
+    padding: 26px 16px !important;
+  }
+
+  .pain-points__reveal-name {
+    font-size: clamp(1.4rem, 6vw, 1.85rem) !important;
+    white-space: nowrap !important;
+  }
+
+  .pain-points__reveal-answer em {
+    font-size: clamp(1.22rem, 5.4vw, 1.7rem) !important;
+  }
 }
 
 /* ==========================================================================
