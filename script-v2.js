@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (secsEl) secsEl.textContent = pad(seconds);
 
     if (stickyUrgencyEl) {
-      stickyUrgencyEl.textContent = `Closes in ${days}d ${hours}h · ₹499`;
+      stickyUrgencyEl.textContent = `Closes in ${days}d ${hours}h · ₹199`;
     }
   };
 

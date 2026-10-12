@@ -2063,12 +2063,45 @@ section {
   flex-wrap: wrap;
 }
 
+.offer__price-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-xs);
+}
+
+.offer__strike-price {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  opacity: 0.65;
+  font-weight: 400;
+}
+
 .offer__price {
   font-family: var(--font-heading);
   font-size: clamp(2.75rem, 6vw, 3.75rem);
   color: var(--color-text);
-  margin-bottom: var(--space-xs);
   font-weight: 500;
+  margin-bottom: 0;
+}
+
+.price-strike {
+  text-decoration: line-through;
+  opacity: 0.65;
+  margin-right: 5px;
+  font-weight: 400;
+}
+
+.btn-strike {
+  text-decoration: line-through;
+  opacity: 0.75;
+  margin-right: 6px;
+  font-weight: 400;
+  font-size: 0.9em;
+  display: inline-block;
 }
 
 .offer__price-note {
