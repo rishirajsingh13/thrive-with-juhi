@@ -309,6 +309,166 @@ h2,
   gap: 5px;
 }
 
+/* ==========================================================================
+   HERO SCHEDULE SECTION (Live Timings Component)
+   ========================================================================== */
+.hero-v2__schedule-box {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(188, 145, 100, 0.28);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 20px rgba(81, 68, 52, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-v2__schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-rule-light);
+}
+
+.hero-v2__schedule-header-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-v2__schedule-live-dot {
+  width: 8px;
+  height: 8px;
+  background: #5F7A51;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.5px rgba(95, 122, 81, 0.25);
+  animation: pulseDot 2s infinite;
+  flex-shrink: 0;
+}
+
+.hero-v2__schedule-header-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6A4423;
+}
+
+.hero-v2__schedule-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #513E2F;
+  background: rgba(188, 145, 100, 0.12);
+  padding: 3px 9px;
+  border-radius: 100px;
+  border: 1px solid rgba(188, 145, 100, 0.22);
+  white-space: nowrap;
+}
+
+.hero-v2__schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.hero-v2__schedule-card {
+  background: #FAF8F5;
+  border: 1px solid rgba(188, 145, 100, 0.22);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-v2__schedule-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(188, 145, 100, 0.12);
+  transform: translateY(-1px);
+}
+
+.hero-v2__schedule-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.hero-v2__day-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #EFE7DC;
+  color: #4A3525;
+}
+
+.hero-v2__day-tag--accent {
+  background: rgba(95, 122, 81, 0.16);
+  color: #2F4822;
+}
+
+.hero-v2__day-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.hero-v2__schedule-time {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-top: 3px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.hero-v2__schedule-tz {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.hero-v2__schedule-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.hero-v2__schedule-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--color-rule-light);
+}
+
+.hero-v2__schedule-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .hero-v2__cta-group {
   margin-bottom: 10px;
 }
@@ -431,6 +591,38 @@ h2,
     padding: 8px 12px;
     font-size: 0.8125rem;
     margin-bottom: 16px;
+  }
+
+  .hero-v2__schedule-box {
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+
+  .hero-v2__schedule-header {
+    gap: 6px;
+  }
+
+  .hero-v2__schedule-badge {
+    font-size: 0.6875rem;
+    padding: 2px 7px;
+  }
+
+  .hero-v2__schedule-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero-v2__schedule-card {
+    padding: 9px 11px;
+  }
+
+  .hero-v2__schedule-time {
+    font-size: 0.875rem;
+  }
+
+  .hero-v2__schedule-footer {
+    gap: 4px 8px;
+    font-size: 0.71875rem;
   }
 }
 
