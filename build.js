@@ -207,9 +207,20 @@ function runBuild() {
     html = html.replace(/⚡\s*Closes\s*[^<·\n]*·\s*Limited Seats/gi, `⚡ Closes ${config.registration_closes_date} · Limited Seats`);
     html = html.replace(/Registration closes\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+/gi, `Registration closes ${config.registration_closes_date}`);
 
+    // Schedule cards Day 1 and Day 2 dates
+    html = html.replace(/(<span\s+class="hero(?:-v2)?__day-tag">Day 1<\/span>\s*<span\s+class="hero(?:-v2)?__day-date"[^>]*>)[^<]*(<\/span>)/gi, `$1${config.day1_date}$2`);
+    html = html.replace(/(<span\s+class="hero(?:-v2)?__day-tag[^>]*>Day 2<\/span>\s*<span\s+class="hero(?:-v2)?__day-date"[^>]*>)[^<]*(<\/span>)/gi, `$1${config.day2_date}$2`);
+
+    // Curriculum pills
+    html = html.replace(/(<span\s+class="curriculum-v2__header-pill"[^>]*>)\s*Day 1 Focus[^<]*(<\/span>)/gi, `$1${config.day1_pill}$2`);
+    html = html.replace(/(<span\s+class="curriculum-v2__header-pill"[^>]*>)\s*Day 2 Focus[^<]*(<\/span>)/gi, `$1${config.day2_pill}$2`);
+
     // Meta row dates and times (📅 ... and ⏰ ...)
-    html = html.replace(/📅\s*\d{1,2}(?:st|nd|rd|th)?\s*[-–—to]+\s*\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+/gi, `📅 ${config.event_date}`);
-    html = html.replace(/⏰\s*Day 1:[^<·\n]*/gi, `⏰ ${config.event_time}`);
+    html = html.replace(/(<span[^>]*>)\s*📅[^<]*(<\/span>)/gi, `$1📅 ${config.event_date}$2`);
+    html = html.replace(/(<span[^>]*>)\s*⏰[^<]*(<\/span>)/gi, `$1⏰ ${config.event_time}$2`);
+
+    // Final CTA & sticky top bar text in v1 pages
+    html = html.replace(/(<p\s+class="final-cta__meta[^"]*"[^>]*>)[^<]*(<\/p>)/gi, `$1${config.event_date} · ${config.event_time} · Live on Zoom$2`);
 
     // 4c. If payment URL override specified, update payment links
     const targetPaymentUrl = relPath.includes('organic') ? (organic_payment_url || payment_url) : payment_url;
