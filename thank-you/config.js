@@ -1,0 +1,27 @@
+// Auto-generated configuration by build.js — Do not edit directly
+window.__APP_CONFIG__ = {
+  "event_date": "22–23 Oct",
+  "webinar_date": "22–23 Oct",
+  "day1_date": "22 Oct",
+  "day2_date": "23 Oct",
+  "registration_closes_date": "21 Oct",
+  "registration_closes_text": "Registration closes 21 Oct",
+  "timezone": "IST",
+  "day1_time": "10:00 AM – 11:00 AM",
+  "day2_time": "10:00 AM – 11:30 AM",
+  "event_time": "Day 1: 10–11 AM · Day 2: 10–11:30 AM IST",
+  "webinar_time": "Day 1: 10–11 AM · Day 2: 10–11:30 AM IST",
+  "day1_pill": "Day 1 Focus · 10:00 AM – 11:00 AM IST",
+  "day2_pill": "Day 2 Focus · 10:00 AM – 11:30 AM IST",
+  "event_date_badge": "📅 22–23 Oct",
+  "event_time_badge": "⏰ Day 1: 10–11 AM · Day 2: 10–11:30 AM IST",
+  "offer_urgency_badge": "⚡ Limited Live Seats · Registration Closes 21 Oct",
+  "offer_price_note": "Registration closes 21 Oct · No prior experience needed",
+  "sticky_urgency": "⚡ Closes 21 Oct · Limited Seats",
+  "price_raw": "99",
+  "price_formatted": "₹99",
+  "original_price_raw": "999",
+  "original_price_formatted": "₹999",
+  "savings_badge": "90% OFF",
+  "whatsapp_link": "https://chat.whatsapp.com/DbON8aN8LckGfnUa5a6YAL?mode=gi_t"
+};

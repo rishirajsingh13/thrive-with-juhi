@@ -45,7 +45,18 @@ function initThankYouPage() {
     console.log('Payment confirmed:', paymentId);
   }
 
-}
+  // ──────────────────────────────────────
+  // 3. Dynamic WhatsApp Link
+  // ──────────────────────────────────────
+  const whatsappCta = document.getElementById('whatsapp-cta');
+  if (whatsappCta) {
+    const customWaLink = urlParams.get('wa') || 
+                         urlParams.get('whatsapp') || 
+                         (window.__APP_CONFIG__ && window.__APP_CONFIG__.whatsapp_link);
+    if (customWaLink) {
+      whatsappCta.href = customWaLink;
+    }
+  }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initThankYouPage);

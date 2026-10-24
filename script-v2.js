@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (secsEl) secsEl.textContent = pad(seconds);
 
     if (stickyUrgencyEl) {
-      stickyUrgencyEl.textContent = `Closes in ${days}d ${hours}h · ₹99`;
+      const currentPrice = document.querySelector('.sticky-bottom-bar-v2__price')?.textContent?.trim() || 
+                           (window.__APP_CONFIG__ && window.__APP_CONFIG__.price_formatted) || '₹99';
+      stickyUrgencyEl.textContent = `Closes in ${days}d ${hours}h · ${currentPrice}`;
     }
   };
 

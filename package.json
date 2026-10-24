@@ -1,0 +1,9 @@
+{
+  "name": "thrive-with-juhi",
+  "version": "1.0.0",
+  "description": "Thrive with Juhi Parmar — 2-Day LIVE Experience Landing Page",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js"
+  }
+}
